@@ -8,6 +8,8 @@ public class Loops {
     public static void main( String[] args )
     {
 
+        // https://github.com/GiliShalev/Qualitest.git
+
         // 1
 //        int sum = 0;
 //        int[] intArr = {2, 5, 8, 9, 45, 22};
@@ -103,8 +105,14 @@ public class Loops {
             System.out.println();
         }
 
-
-
+        // 8
+        int numOfDigit = 1;
+        int n = 2304;
+        while(n / 10 > 0) {
+            numOfDigit++;
+            n = n / 10;
+        }
+        System.out.println("NUM: " + numOfDigit);
 
     }
 }
