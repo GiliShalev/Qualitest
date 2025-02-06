@@ -102,8 +102,9 @@ public class Loops {
         }
 
 
-
-
+        Methods methods = new Methods();
+        int r = methods.sum(1, 2);
+        methods.printSum(3, 7);
 
 
     }
