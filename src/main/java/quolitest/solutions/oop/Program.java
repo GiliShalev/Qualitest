@@ -1,5 +1,7 @@
 package quolitest.solutions.oop;
 
+import java.util.HashMap;
+
 public class Program {
 
     public static void main(String[] args){
@@ -13,10 +15,10 @@ public class Program {
         String vendorAndModel = ford1.getVendorAndModel();
         System.out.println("Vendor and model are: " + vendorAndModel);
 
-        Passenger moses = new Passenger("Gil", "Shalev", "MEAT", "24A");
-        Passenger yael = new Passenger("Yael", "Cohen", "VEG", "24B");
-        Passenger david = new Passenger("David", "Levi", "FISH", "25A");
-        Passenger rachel = new Passenger("Rachel", "Stern", "MILK", "14C");
+        Passenger moses = new Passenger("Gil", "Shalev", "MEAT", "24A", 1234);
+        Passenger yael = new Passenger("Yael", "Cohen", "VEG", "24B", 5678);
+        Passenger david = new Passenger("David", "Levi", "FISH", "25A", 7890);
+        Passenger rachel = new Passenger("Rachel", "Stern", "MILK", "14C", 1357);
         moses.setMeal("PASTA");
         yael.printInfo();
 
@@ -38,6 +40,13 @@ public class Program {
         System.out.println("Passenger name is: " + firstPassenger.getFirstName() + " " + firstPassenger.getLastName());
         int totalPass = Flight.getTotalPassengersInAllFlights();
         System.out.println("Total passengers in all flights: " + totalPass);
+
+        Passenger p1 = flight1.getPassengerFromMap(1234);
+        System.out.println(p1.getFirstName());
+
+        HashMap<Integer, Passenger> allPass = flight1.getPassengersMap();
+        for(int i : allPass.keySet())
+            System.out.println(allPass.get(i).getMeal());
 
     }
 

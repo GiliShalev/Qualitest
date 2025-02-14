@@ -6,9 +6,10 @@ public class Car {
         this.vendor = vendor;
         this.model = model;
     }
-    public Car(String vendor, String model, double price) {
+    public Car(String vendor, String model, double price, int licenseNumber) {
         this(vendor, model);
         this.price = price;
+        this.licenseNumber = licenseNumber;
     }
 
     public Car(String vendor) {
@@ -19,6 +20,23 @@ public class Car {
     private int numOfWheels = 4;
     private String vendor, model;
 
+    public String getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
+    private int licenseNumber;
+
+    public int getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(int licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
 
     private double price;
     public double getPrice() {

@@ -48,6 +48,15 @@ public class Car {
     private int numOfWheels = 4;
     private double price;
     private double vat = 1.18;
+    private int licenseNumber;
+
+    public int getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(int licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
 
     public void go(){
         go(120);

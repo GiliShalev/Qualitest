@@ -10,7 +10,7 @@ public class Methods {
 //        Car.doSomething();
 //
         Car volvo = new Car();
-        Car man = new Car("Man", "X2", 180000);
+        Car man = new Car("Man", "X2", 180000, 555);
 
         String[] arr = {"aaa", "bbb"};
         volvo.myFunction(2, arr);

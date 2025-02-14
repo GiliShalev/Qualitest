@@ -12,12 +12,13 @@ public class RockingChair extends Chair{
     }
 
     public void setMaxRockingAngle(int maxRockingAngle) {
-        this.maxRockingAngle = maxRockingAngle;
+        if(isSizeLegal(maxRockingAngle, 0, 180))
+            this.maxRockingAngle = maxRockingAngle;
     }
 
     int maxRockingAngle;
     public RockingChair(double length, double width, double height, String color, String material, int maxRockingAngle) {
         super(length, width, height, color, material);
-        this.maxRockingAngle = maxRockingAngle;
+        setMaxRockingAngle(maxRockingAngle);
     }
 }

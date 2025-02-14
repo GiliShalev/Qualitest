@@ -60,6 +60,20 @@ public class Passenger {
     private String lastName;
     private String meal;
     private String seat;
+    private int passportNumber;
+
+    public Passenger(String firstName, String lastName, String meal, String seat, int passportNumber) {
+        this(firstName, lastName, meal, seat);
+        this.passportNumber = passportNumber;
+    }
+
+    public int getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(int passportNumber) {
+        this.passportNumber = passportNumber;
+    }
 
     public void printInfo(){
         System.out.println("First name is " + firstName);

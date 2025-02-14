@@ -1,5 +1,7 @@
 package quolitest.solutions.oop;
 
+import java.util.HashMap;
+
 public class Flight {
 
     public int getNumOfPassengers() {
@@ -66,16 +68,27 @@ public class Flight {
     private int numOfSeats, numOfPassengers;
     private String from, to, date, time;
     private Passenger[] passengers;
+
+    public HashMap<Integer, Passenger> getPassengersMap() {
+        return passengersMap;
+    }
+
+    private HashMap<Integer, Passenger> passengersMap = new HashMap<>();
     private static int totalPassengersInAllFlights;
 
     public void addPassenger(Passenger passenger){
         passengers[numOfPassengers] = passenger;
+        passengersMap.put(passenger.getPassportNumber(), passenger);
         numOfPassengers++;
         totalPassengersInAllFlights++;
     }
 
     public Passenger getPassenger(int index){
         return passengers[index];
+    }
+
+    public Passenger getPassengerFromMap(int key){
+        return passengersMap.get(key);
     }
 
 

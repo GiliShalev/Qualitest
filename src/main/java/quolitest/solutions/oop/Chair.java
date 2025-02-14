@@ -6,9 +6,9 @@ public class Chair {
     }
 
     public Chair(double length, double width, double height, String color, String material) {
-        this.length = length;
-        this.width = width;
-        this.height = height;
+        setLength(length);
+        setWidth(width);
+        setHeight(height);
         setColor(color);
         this.material = material;
     }
@@ -26,10 +26,16 @@ public class Chair {
         System.out.println("Volume is: " + getVolume());
     }
 
+    protected boolean isSizeLegal(double length, int min, int max){
+        if(length < min || length > max) {
+            System.out.println("Size must be 10-150!");
+            return false;
+        }
+        return true;
+    }
+
     public void setLength(double length) {
-        if(length < 10 && length > 150)
-            System.out.println("Length must be 10-150!");
-        else
+        if(isSizeLegal(length, 10, 150))
             this.length = length;
     }
 
@@ -38,7 +44,8 @@ public class Chair {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if(isSizeLegal(width, 10, 150))
+            this.width = width;
     }
 
     public double getHeight() {
@@ -46,7 +53,8 @@ public class Chair {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        if(isSizeLegal(height, 10, 150))
+            this.height = height;
     }
 
     public String getColor() {
